@@ -151,3 +151,80 @@ Interrupt while evaluating UIControl Callback.
 clear
 clc
 exit
+Initializing...
+toc: 3.6641s
+*******************************************************
+f = 10000Hz
+【Global Domain Search】
+=》Function Discretizing...
+toc: 5.9637s
+=》Local-Peaks Searching...
+toc: 6.7256s
+=》Local-Roots Computing...
+>>cp = 3280.5666;  ki = 8.4857e-17
+>>cp = 5467.1554;  ki = -6.8051e-16
+toc: 6.9169s
+----------------------------------------
+【Local Domain Search】
+>>Singular Wavenumber: cp0 = 5934.7683; ki0 = 0
+=》Function Discretizing...
+toc: 7.003s
+=》Local-Peaks Searching...
+toc: 7.0348s
+=》Local-Roots Computing...
+>>No Roots Find!
+toc: 7.0361s
+>>Singular Wavenumber: cp0 = 3280.5666; ki0 = 0
+=》Function Discretizing...
+toc: 7.1126s
+=》Local-Peaks Searching...
+toc: 7.1407s
+=》Local-Roots Computing...
+>>cp = 3280.5666;  ki = -9.9906e-17
+toc: 7.1575s
+>>Singular Wavenumber: cp0 = 3032.0863; ki0 = 0
+=》Function Discretizing...
+toc: 7.2382s
+=》Local-Peaks Searching...
+toc: 7.2666s
+=》Local-Roots Computing...
+>>No Roots Find!
+toc: 7.2676s
+----------------------------------------
+【Roots Merge】
+Raw Results: 
+>>cp = 3280.5666  ki = 8.4857e-17
+>>cp = 3280.5666  ki = -9.9906e-17
+>>cp = 5467.1554  ki = -6.8051e-16
+toc: 7.29s
+*******************************************************
+f = 20000Hz
+【Global Domain Search】
+=》Function Discretizing...
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('DispFunction>DispFunction_PP', 'E:\Works\GitHub\LocalPeaksSearchMethod\DispFunction.m', 17)" style="font-weight:bold">DispFunction>DispFunction_PP</a> (<a href="matlab: opentoline('E:\Works\GitHub\LocalPeaksSearchMethod\DispFunction.m',17,0)">line 17</a>)
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('DispFunction', 'E:\Works\GitHub\LocalPeaksSearchMethod\DispFunction.m', 6)" style="font-weight:bold">DispFunction</a> (<a href="matlab: opentoline('E:\Works\GitHub\LocalPeaksSearchMethod\DispFunction.m',6,0)">line 6</a>)
+        fdisp = DispFunction_PP(f, MPM, k);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('DispFunDiscretize', 'E:\Works\GitHub\LocalPeaksSearchMethod\DispFunDiscretize.m', 12)" style="font-weight:bold">DispFunDiscretize</a> (<a href="matlab: opentoline('E:\Works\GitHub\LocalPeaksSearchMethod\DispFunDiscretize.m',12,0)">line 12</a>)
+        DISP(ii,jj) = DispFunction(f, MPM, k);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GlobalDomainSearch', 'E:\Works\GitHub\LocalPeaksSearchMethod\GlobalDomainSearch.m', 8)" style="font-weight:bold">GlobalDomainSearch</a> (<a href="matlab: opentoline('E:\Works\GitHub\LocalPeaksSearchMethod\GlobalDomainSearch.m',8,0)">line 8</a>)
+[MCP, MKI, DISP] = DispFunDiscretize(f, MPM, SPM);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUIMain>Run_Callback', 'E:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 255)" style="font-weight:bold">GUIMain>Run_Callback</a> (<a href="matlab: opentoline('E:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m',255,0)">line 255</a>)
+    [cp1, ki1]= GlobalDomainSearch(f, MPM, SPM, kur, err);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('gui_mainfcn', 'D:\Programs\MATLAB\R2020b\toolbox\matlab\guide\gui_mainfcn.m', 95)" style="font-weight:bold">gui_mainfcn</a> (<a href="matlab: opentoline('D:\Programs\MATLAB\R2020b\toolbox\matlab\guide\gui_mainfcn.m',95,0)">line 95</a>)
+        feval(varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('GUIMain', 'E:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 42)" style="font-weight:bold">GUIMain</a> (<a href="matlab: opentoline('E:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m',42,0)">line 42</a>)
+    gui_mainfcn(gui_State, varargin{:});
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUIMain(''Run_Callback'',hObject,eventdata,guidata(hObject))')" style="font-weight:bold">matlab.graphics.internal.figfile.FigFile/read>@(hObject,eventdata)GUIMain('Run_Callback',hObject,eventdata,guidata(hObject))</a>
+} 
+Interrupt while evaluating UIControl Callback.
+
+clear
+GUIMain
