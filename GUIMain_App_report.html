@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Migration Report for GUIMain</title>
+    <style type="text/css">
+        html body {
+            height: 100%;
+            padding: 0; margin: 0;
+            color: #474747;
+            font: 13px/1.384 Arial, Helvetica, sans-serif;
+        }
+        /*Report Title Header*/
+        h1 {
+            font-family: Futura, Arial, Helvetica, sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #fff;
+            margin: 0;
+            padding: 15px;
+        }
+        /*Report Section Headers*/
+        h2 {
+            padding-bottom: 2px;
+            margin: 20px 0 17px 0;
+            border-bottom: 1px solid #cbcbcb;
+            color: #c45400;
+            font: normal normal 22px/1.136 Arial,Helvetica,sans-serif;
+        }
+        /*Report Subsection Headers*/
+        h3 {
+            margin: 20px 0 20px 0;
+            font: normal bold 17px/1.35 Arial, Helvetica, sans-serif;
+        }
+        ul.childHasIcon {
+            padding-left: 20px;
+        }
+        ul > li.success {
+            list-style: none;
+            /*Check-mark image*/
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAK2SURBVHjaVJNPaFRXFMZ/b96MmUZGURMyHaoTa0QrRReD4KIlwriRRhPpoi1ddeNG4krFRbAbceOf0qJuSoWWWlooIiKlCSkp1ARksEmpi8GSQjKJUSYk/p1J5r17vi7ee609cFf3+33n3HvO8SgdJYn+oZFODw4DBxB7hYoSMzJVZBo12a2fzr9X55XwEoOBoZGyYNCDfgEyIQkMzIRkBKupYXN89svVg8OJgU+hxMDQSBk45+GVJSJQQk5IYGbIhIfrcSF78ttrC3P336wC+ANXlzqBs0A5EgtkSMJMMRxXFN11mSm/pr05sTSXX0qBDkvqj0Qx6MBC/QuVt77Pp/uvkV9bxJzhZ5r7cx2LHwGZtMQBGUhRmSaB/Zd9rb+OD98+zub1Paxbs5FjNw9GJm2NXuDLtMz2RuUC8VsVG2T9di4fGqaQ6+ZubZTvJ69goWEy/PTKTmBDykxFc0LOOLHvMu+8cQjnjDRtXDsyTiHXTaU2xpmfP6EyO4Y5Q6EgFXQBubRMM+a0zcx4t9hHb3c/j5/Ncbr3Cpva80w9HOfU7Q8IwhbmonaagQv8x0A25ZxVzAxz4tupS0jG5323eT1XZHL+DoM3+mgFLZwzEp2c0WpmqsBKypxGLb785vcLfH3vAgCT878xeKMvAp1FM5Ecg5Wn6+8Bz1Pm3K1W0xu2UFhofDf5BX8t/snFsZPxDMSZzaLOSKw2suOPHuyaAJb9v+c+bmze/aBuTnuE6wrCgJt/fMVyox6NcNwRCTARtjLV5fkt1+vTb1WAmk+hxOzUjumOrTMLkuVTXtCdgMmHJTux2nxt/Ml88Xptat+vwCzw0qdQAmCh2lPNZBsTJluU8ySsDazdhf6j1sts5cVS548P75d+qE/vrMTw8v+28ZXIAB3ABiAHZIEV4HkMLQJBIv5nAPq180UQOlmCAAAAAElFTkSuQmCC') no-repeat;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+        ul.verifications > li {
+            margin: 7px 0 7px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table,th,tr,td {
+            border: 1px solid #ccc;
+            text-align: left;
+            vertical-align: top;
+            padding: 8px 15px;
+        }
+        tr:nth-child(odd) {
+            background-color: #fafafa;
+        }
+        a { color: #187dbb; text-decoration: none; }
+        a:visited { color: #004b87; text-decoration: none; }
+        a:hover { color: #004b87; text-decoration: underline;}
+        code {
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        }
+        .reportTitle {
+            min-height: 52px;
+            background: #2f7eb2;
+        }
+        .reportBody {
+            padding: 0 15px 0 15px;
+        }
+        /*Classes that are used by HTML that is added dynamically by the report generator */
+        .detailsWorkaround {
+            padding: 10px 0px;
+        }
+        .detailsWorkaroundHeader {
+            padding-right: 5px;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+        .showMore {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="reportTitle">
+        <h1>Migration Report for <code>GUIMain</code></h1>
+    </div>
+    <div class="reportBody">
+        <section>
+            <h3>Your GUIDE app was migrated to App Designer and some action is required.</h3>
+            <h2>Migration Results</h2>
+            <ul class="childHasIcon">
+                <li class="success"><b>GUIMain_App.mlapp</b> file created</li>
+                <li class="success"><b>1033</b> lines of code analyzed in GUIMain.m</li>
+                <li class="success"><b>86</b> components created and initialized</li>
+                <li class="success"><b>4</b> callbacks and utility functions configured and enabled to function in App Designer</li>
+            </ul>
+        </section>
+        <section>
+    <h2>Issues Requiring Action</h2>
+    <table>
+        <tr>
+            <th>Functionality</th>
+            <th>GUIDE Line #</th>
+            <th>Details</th>
+        </tr>
+        <tr><td><code>findobj</code></td><td><div class=""><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 83)">line 83</a></div>
+<div class=""><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 83)">line 83</a></div>
+<div class=""><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 84)">line 84</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 84)">line 84</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 85)">line 85</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 85)">line 85</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 86)">line 86</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 86)">line 86</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 87)">line 87</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 87)">line 87</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 88)">line 88</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 88)">line 88</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 90)">line 90</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 90)">line 90</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 91)">line 91</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 91)">line 91</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 92)">line 92</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 93)">line 93</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 93)">line 93</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 94)">line 94</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 95)">line 95</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 95)">line 95</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 96)">line 96</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 97)">line 97</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 97)">line 97</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 98)">line 98</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 99)">line 99</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 99)">line 99</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 103)">line 103</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 105)">line 105</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 109)">line 109</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 111)">line 111</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 113)">line 113</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 115)">line 115</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 117)">line 117</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 119)">line 119</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 123)">line 123</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 125)">line 125</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 127)">line 127</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 129)">line 129</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 136)">line 136</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 136)">line 136</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 137)">line 137</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 137)">line 137</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 138)">line 138</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 138)">line 138</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 139)">line 139</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 139)">line 139</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 140)">line 140</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 140)">line 140</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 141)">line 141</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 141)">line 141</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 143)">line 143</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 143)">line 143</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 144)">line 144</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 144)">line 144</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 145)">line 145</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 146)">line 146</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 146)">line 146</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 147)">line 147</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 147)">line 147</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 148)">line 148</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 148)">line 148</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 149)">line 149</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 149)">line 149</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 150)">line 150</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 152)">line 152</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 152)">line 152</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 153)">line 153</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 153)">line 153</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 154)">line 154</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 154)">line 154</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 155)">line 155</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 156)">line 156</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 156)">line 156</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 180)">line 180</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 181)">line 181</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 182)">line 182</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 183)">line 183</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 184)">line 184</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 185)">line 185</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 186)">line 186</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 187)">line 187</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 188)">line 188</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 189)">line 189</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 190)">line 190</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 191)">line 191</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 193)">line 193</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 194)">line 194</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 195)">line 195</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 196)">line 196</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 197)">line 197</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 199)">line 199</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 200)">line 200</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 201)">line 201</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 202)">line 202</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 203)">line 203</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 205)">line 205</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 206)">line 206</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 207)">line 207</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 208)">line 208</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 209)">line 209</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 210)">line 210</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 211)">line 211</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 212)">line 212</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 213)">line 213</a></div>
+<div class="hidden"><a href="matlab:opentoline('D:\Works\GitHub\LocalPeaksSearchMethod\GUIMain.m', 214)">line 214</a></div>
+<div class="showMore"><a href="#" onclick="toggleShowMore(this); return false;">Show more (104)</a></div>
+<div class="showMore hidden"><a href="#" onclick="toggleShowMore(this); return false;">Show less</a></div></td><td rowspan="1"><div>Using <code>findobj</code>, <code>findall</code> or <code>gcbo</code> to locate a <code>UIControl</code> object requires updates to your code.</div><div class="detailsWorkaround"><span class="detailsWorkaroundHeader">Action:</span><span class="detailsWorkaroundText">Access your app component using the <code>handles</code> structure instead, or update your code to use the associated App Designer component. For more details, see <a href="matlab:helpview('matlab','migration_considerations');">GUIDE Migration Strategies</a>.</span></div></tr>
+    </table>
+</section>
+        <section>
+            <h2>Validate Your Migrated App</h2>
+            <p>The migration tool enables most of your app code to execute. Now, you need to fully validate your migrated app to make sure it behaves as expected. Consider doing the following verifications:</p>
+            <ul>
+                <li>Verify Layout
+                    <ul class="verifications">
+                        <li>Run your app and verify the initial layout of all components is as expected.</li>
+                        <li>If your app dynamically shows, hides, or enables additional components or options in response to selections made within the app, confirm these behave as expected.</li>
+                    </ul>
+                </li>
+                <li>Verify Callbacks
+                    <ul class="verifications">
+                        <li>Run and close your app to confirm there are no startup or termination errors.</li>
+                        <li>Exercise the workflows specific to your app, starting with the most basic, and gradually proceeding to the more complex ones.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>If unexpected errors occur, either within the app or at the MATLAB command line, address those issues before continuing with the validation. For troubleshooting assistance and additional information, see <a href="matlab:helpview(fullfile(docroot,'matlab', 'creating_guis', 'differences-between-app-designer-and-guide.html#mw_7f306e19-74d0-4c0b-989d-74ed63e32ddd'));">GUIDE Migration Strategies</a>.</p>
+        </section>
+    </div>
+    <script type="text/javascript">
+        // Toggles showing the "Show More (10)" hyperlink with the "Show less" hyperlink
+        function toggleShowMore(selectedHyperlink) {
+            // Find the parent td for the selected hyperlink ("Show more" or "Show less")
+            var td = selectedHyperlink.parentElement.parentElement;
+
+            // Toggle the "hidden" class on all of the elements but the first 3. The first 3 we want to always be
+            // visible.
+            var tags = td.children;
+            for (var i=3; i<tags.length; i++) {
+                tags[i].classList.toggle("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
